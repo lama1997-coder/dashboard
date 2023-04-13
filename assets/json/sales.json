@@ -1,0 +1,43 @@
+{
+    "orders_summary": [
+        {
+            "title": "Total sales",
+            "number": "100.00 SR",
+            "percentage": "10%",
+            "color":""
+        },
+        {
+            "title": "Total orders",
+            "number": "100  orders",
+            "percentage": "10%"
+        },
+        {
+            "title": "Total income",
+            "number":"100.00 SR",
+            "percentage": "10%"
+        }
+    ],
+    "seller_summary":[
+
+        {
+            "title":"new orders",
+            "percentage": "10%"
+
+        },
+        {
+            "title":"Shipped Orders",
+            "percentage": "10%"
+
+        },
+        {
+            "title":"Completed Orders",
+            "percentage": "10%"
+
+        },
+        {
+            "title":"Returned Applications",
+            "percentage": "10%"
+
+        }
+    ]
+}
