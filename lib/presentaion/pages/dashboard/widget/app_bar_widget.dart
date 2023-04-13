@@ -20,16 +20,22 @@ class _AppBarWidgetState extends State<AppBarWidget> {
         ),
         Column(
           children: [
-            Container(
+            DropDown(
               width: 100,
-              child: DropDown(
-                items: ["profile settings", "log out"],
-                title: "Hi Dema ",
-              ),
+              border: false,
+              items: ["profile settings", "log out"],
+              title: "Hi Dema ",
             ),
             DefaultText(title: "Good Morning!")
           ],
         ),
+        DropDown(
+          items: ["EN", "AR"],
+          title: "EN",
+        ),
+        Buttons(
+          icon: Res.messages,
+        )
       ],
     );
   }

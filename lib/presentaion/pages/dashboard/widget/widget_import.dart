@@ -8,3 +8,5 @@ import '../../../common/DefaultText.dart';
 import '../../../common/common_widget/widget_import.dart';
 
 part 'app_bar_widget.dart';
+part 'order_summary_cards.dart';
+part 'buttons.dart';
