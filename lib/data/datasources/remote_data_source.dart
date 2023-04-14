@@ -3,24 +3,23 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:base/data/exception.dart';
+import 'package:base/presentaion/common/utils.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
 abstract class RemoteDataSource {
   Future<dynamic> httpRequest({
-      required String filePath,
-
+    required String filePath,
   });
 }
 
 class RemoteDataSourceImp extends RemoteDataSource {
-
   @override
   Future<dynamic> httpRequest({
     required String filePath,
   }) async {
     try {
-      var input = await File(filePath).readAsString();
+      var input = await Utils.readFiles(filePath);
       var map = jsonDecode(input);
       return map;
     } on DioError catch (e) {

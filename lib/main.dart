@@ -3,6 +3,7 @@ import 'injection.dart' as di;
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'presentaion/bloc/order_summary/order_summary_bloc.dart';
+import 'presentaion/bloc/side_menue/dark_mode_bloc.dart';
 import 'presentaion/bloc/side_menue/open_menu_bloc.dart';
 import 'presentaion/bloc/side_menue/side_menu_bloc.dart';
 import 'presentaion/pages/home_page/home_page_import.dart';
@@ -22,14 +23,15 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (_) => di.locator<OrderSummaryBloc>(),
-          
         ),
-         BlocProvider(
+        BlocProvider(
           create: (_) => di.locator<SideMenuCubit>(),
-          
-        ),BlocProvider(
+        ),
+        BlocProvider(
           create: (_) => di.locator<OpenMenueCubit>(),
-          
+        ),
+        BlocProvider(
+          create: (_) => di.locator<DarkModeCubit>(),
         )
       ],
       child: MaterialApp(

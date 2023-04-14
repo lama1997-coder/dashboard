@@ -41,7 +41,8 @@ dependencies:
   get_it: ^7.2.0
   dio: ^5.1.1
   auto_route: ^6.1.0
-  google_fonts: ^4.0.3      
+  google_fonts: ^4.0.3
+  flutter_svg: any      
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -50,6 +51,7 @@ dependencies:
   side_navigation: ^1.0.4
   generic_bloc_provider: ^2.1.1
   dropdown_button2: ^2.0.0
+  syncfusion_flutter_charts: ^21.1.39
 
 dev_dependencies:
   flutter_test:
@@ -79,6 +81,16 @@ flutter:
     - assets/images/logo.png
     - assets/images/profile.png
     - assets/images/messages.png
+    - assets/images/noti.png
+    - assets/images/dark.png
+    - assets/images/sun.png
+    - assets/images/dollar-square.svg
+    - assets/images/trendup.png
+    - assets/images/trenddown.png
+    - assets/images/Yes.png
+    - assets/images/No.png
+    - assets/images/coin.svg
+    - assets/images/bag.svg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

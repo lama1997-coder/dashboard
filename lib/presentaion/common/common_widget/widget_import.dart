@@ -7,3 +7,4 @@ import 'package:flutter/scheduler.dart';
 
 part 'default_app_bar.dart';
 part 'drop_down.dart';
+part 'card_widget.dart';
