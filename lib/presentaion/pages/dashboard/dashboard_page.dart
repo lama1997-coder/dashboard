@@ -1,22 +1,14 @@
 part of 'dashboard_import.dart';
 
 class DashbordPage extends StatefulWidget {
-  const DashbordPage({super.key});
+  final DashboardData? dashboardData;
+  const DashbordPage({super.key, this.dashboardData});
 
   @override
   State<DashbordPage> createState() => _DashbordPageState();
 }
 
 class _DashbordPageState extends State<DashbordPage> {
-  late DashboardData dashboardData;
-
-  @override
-  void initState() {
-    dashboardData = DashboardData();
-    dashboardData.getSellerSummary(context);
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -28,13 +20,18 @@ class _DashbordPageState extends State<DashbordPage> {
                   child: CircularProgressIndicator(),
                 )
               : ListView(
+                  // padding: EdgeInsets.symmetric(horizontal: 10),
                   children: [
                     AppBarWidget(
-                      dashboardData: dashboardData,
+                      dashboardData: widget.dashboardData!,
                     ),
                     state is OrderSummaryHasData
                         ? Column(
+                            mainAxisSize: MainAxisSize.min,
                             children: [
+                              SizedBox(
+                                height: 30,
+                              ),
                               OrderSummaryCards(
                                 ordersSummary: state.result.ordersSummary ?? [],
                               ),
@@ -48,6 +45,7 @@ class _DashbordPageState extends State<DashbordPage> {
                                 children: [
                                   Expanded(
                                       child: StaticticsWidget(
+                                    dashboardData: widget.dashboardData!,
                                     statictics: state.result.statictics ?? [],
                                   )),
                                   const SizedBox(
@@ -55,8 +53,9 @@ class _DashbordPageState extends State<DashbordPage> {
                                   ),
                                   Expanded(
                                       child: BranchPerformance(
-                                    branchPerformance:
-                                        dashboardData.branch_performance,
+                                    dashboardData: widget.dashboardData!,
+                                    branchPerformance: widget
+                                        .dashboardData!.branch_performance,
                                   ))
                                 ],
                               ),
@@ -67,17 +66,65 @@ class _DashbordPageState extends State<DashbordPage> {
                                 children: [
                                   Expanded(
                                     child: BranchPerformance(
-                                        branchPerformance: dashboardData.vat),
+                                        dashboardData: widget.dashboardData!,
+                                        branchPerformance:
+                                            widget.dashboardData!.vat),
                                   ),
                                   const SizedBox(
                                     width: 80,
                                   ),
                                   Expanded(
                                     child: BranchPerformance(
-                                        branchPerformance: dashboardData.vat),
+                                        dashboardData: widget.dashboardData!,
+                                        branchPerformance:
+                                            widget.dashboardData!.vat),
                                   )
                                 ],
-                              )
+                              ),
+                              const SizedBox(
+                                height: 80,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Expanded(
+                                      child: BestSeller(
+                                    bestSeller:
+                                        widget.dashboardData!.bestSeller,
+                                  )),
+                                  const SizedBox(
+                                    width: 80,
+                                  ),
+                                  Expanded(
+                                    child: Row(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      children: [
+                                        Expanded(
+                                            child: BestBurWidget(
+                                                mostBur: widget
+                                                    .dashboardData!.mostBur)),
+                                        const SizedBox(
+                                          width: 40,
+                                        ),
+                                        Expanded(
+                                            flex: 1,
+                                            child: HeigthPerEmplyeeWidget(
+                                              heightper: widget
+                                                  .dashboardData!.heightperEmp,
+                                            )),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(
+                                height: 80,
+                              ),
+                              SocialMediaWidget()
                             ],
                           )
                         : Container(),

@@ -1,13 +1,17 @@
 part of 'widget_import.dart';
 
-
 class BranchPerformance extends StatelessWidget {
+  final DashboardData dashboardData;
   final List<SellerSummary> branchPerformance;
-  const BranchPerformance({super.key, required this.branchPerformance});
+  const BranchPerformance(
+      {super.key,
+      required this.branchPerformance,
+      required this.dashboardData});
 
   @override
   Widget build(BuildContext context) {
-    return CardWidget(child: Row(
+    return CardWidget(
+      child: Row(
         children: [
           Expanded(
             child: ListView.separated(
@@ -25,11 +29,13 @@ class BranchPerformance extends StatelessWidget {
                             height: 20,
                             decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: Color(branchPerformance[index].color ?? 0)),
+                                color:
+                                    Color(branchPerformance[index].color ?? 0)),
                           )
                         : Container(),
                     SizedBox(
-                      width: branchPerformance[index].percentage != null ? 20 : 0,
+                      width:
+                          branchPerformance[index].percentage != null ? 20 : 0,
                     ),
                     DefaultText(title: branchPerformance[index].title ?? "")
                   ],
@@ -37,6 +43,16 @@ class BranchPerformance extends StatelessWidget {
               },
             ),
           ),
+
+          SizedBox(
+            width: MediaQuery.of(context).size.width / 5.5,
+            child: AspectRatio(
+                aspectRatio: 1.0,
+                child: PieChart(PieChartData(
+                  sections: dashboardData.chartSections(),
+                  centerSpaceRadius: 48.0,
+                ))),
+          )
           //  SfCartesianChart(
           //     primaryXAxis: CategoryAxis(),
           //     // Chart title
@@ -55,6 +71,7 @@ class BranchPerformance extends StatelessWidget {
           //           dataLabelSettings: DataLabelSettings(isVisible: true))
           //     ]),
         ],
-      ),);
+      ),
+    );
   }
 }

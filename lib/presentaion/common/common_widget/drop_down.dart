@@ -38,6 +38,9 @@ class _DropDownState extends State<DropDown> {
       ),
       child: DropdownButtonHideUnderline(
         child: DropdownButton(
+          focusColor: Colors.transparent,
+          dropdownColor: MyColors.primary2,
+          
           underline: SizedBox(),
           // decoration: InputDecoration(
           //   focusColor: MyColors.dengerColor,
@@ -63,7 +66,11 @@ class _DropDownState extends State<DropDown> {
           hint: DefaultText(title: widget.title ?? ""),
           items: widget.items
               .map((item) => DropdownMenuItem<String>(
-                  value: item, child: DefaultText(title: item)))
+                  value: item,
+                  child: DefaultText(
+                    title: item,
+                    color: Colors.white,
+                  )))
               .toList(),
           // validator: (value) {
           //   // if (value == null) {

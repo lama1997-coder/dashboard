@@ -8,7 +8,7 @@ class OrderSummaryCards extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
         scrollDirection: Axis.vertical,
-        gridDelegate:const SliverGridDelegateWithFixedCrossAxisCount(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 3,
           mainAxisSpacing: 0,
           crossAxisSpacing: 65,
@@ -20,6 +20,7 @@ class OrderSummaryCards extends StatelessWidget {
           return CardWidget(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Row(
                   children: [
@@ -47,10 +48,12 @@ class OrderSummaryCards extends StatelessWidget {
                 Row(
                   children: [
                     Expanded(
-                      child: DefaultText(
-                        title: ordersSummary[index].number ?? "",
-                        fontWeight: FontWeight.w500,
-                        size: 32,
+                      child: FittedBox(
+                        child: DefaultText(
+                          title: ordersSummary[index].number ?? "",
+                          fontWeight: FontWeight.w500,
+                          size: 30,
+                        ),
                       ),
                     ),
                     Image.asset(ordersSummary[index].status ?? true

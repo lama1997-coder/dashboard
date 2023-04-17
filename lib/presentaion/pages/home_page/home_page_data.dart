@@ -8,8 +8,12 @@ class HomePageData {
       context.read<SideMenuCubit>().select(index);
 
 
+
+
+
   List<SideMenueModel> side_navigation = [
-    SideMenueModel(name: "Dashboard",page: DashbordPage()),
+    SideMenueModel(name: "Dashboard",page: Dashboard()),
+    
     SideMenueModel(name: "Branch Management"),
     SideMenueModel(name: "Roles Management", icon: Icons.expand_more),
     SideMenueModel(name: "Costumer Management", icon: Icons.expand_more),

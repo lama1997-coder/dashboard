@@ -1,3 +1,5 @@
+import 'package:base/presentaion/bloc/side_menue/message_bloc.dart';
+import 'package:base/presentaion/bloc/side_menue/sub_page.dart';
 import 'package:flutter/material.dart';
 import 'injection.dart' as di;
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -32,6 +34,12 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (_) => di.locator<DarkModeCubit>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<SubPageCubit>(),
+        ),
+        BlocProvider(
+          create: (_) => di.locator<MessageBloc>(),
         )
       ],
       child: MaterialApp(

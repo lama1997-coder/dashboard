@@ -7,14 +7,13 @@ class Menue extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
 
-      width: MediaQuery.of(context).size.width * 0.12,
-      // constraints: BoxConstraints(minWidth: 700),
+      //width: MediaQuery.of(context).size.width * 0.12,
+      constraints: BoxConstraints(minWidth: 700),
       decoration: BoxDecoration(color: MyColors.primary),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
+        shrinkWrap: true,
         children: [
           Image.asset(Res.logo),
           const SizedBox(

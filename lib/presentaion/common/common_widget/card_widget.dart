@@ -2,7 +2,8 @@ part of 'widget_import.dart';
 
 class CardWidget extends StatelessWidget {
   final Widget child;
-  const CardWidget({super.key, required this.child});
+  final Color? color;
+  const CardWidget({super.key, required this.child, this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class CardWidget extends StatelessWidget {
           boxShadow: [
             BoxShadow(
               blurStyle: BlurStyle.normal,
-              color: MyColors.primary2.withOpacity(0.4),
+              color:color?? MyColors.primary2.withOpacity(0.4),
               spreadRadius: 0,
               blurRadius: 10,
               offset: Offset.zero, // changes position of shadow

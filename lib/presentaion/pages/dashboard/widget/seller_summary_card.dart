@@ -23,7 +23,9 @@ class SellerSummaryCard extends StatelessWidget {
                 children: [
                   DefaultText(
                     title: sellerSummary[index].title ?? "",
-                    size: 20,
+                    size: 10,
+                    overflow: TextOverflow.visible,
+                    maxLines: 1,
                   ),
                   const SizedBox(
                     height: 10,
@@ -39,8 +41,8 @@ class SellerSummaryCard extends StatelessWidget {
                       //color: MyColors.primary2,
                       shape: BoxShape.circle,
                     ),
-                    child:
-                        DefaultText(title: sellerSummary[index].percentage ?? ""),
+                    child: DefaultText(
+                        title: sellerSummary[index].percentage ?? ""),
                   )
                 ],
               ),

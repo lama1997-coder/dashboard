@@ -1,6 +1,8 @@
 import 'package:base/domain/use_cases/get_order_summary.dart';
 import 'package:base/presentaion/bloc/side_menue/dark_mode_bloc.dart';
+import 'package:base/presentaion/bloc/side_menue/message_bloc.dart';
 import 'package:base/presentaion/bloc/side_menue/open_menu_bloc.dart';
+import 'package:base/presentaion/bloc/side_menue/sub_page.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
@@ -21,6 +23,10 @@ void init() {
   locator.registerFactory(() => SideMenuCubit());
   locator.registerFactory(() => OpenMenueCubit());
   locator.registerFactory(() => DarkModeCubit());
+    locator.registerFactory(() => SubPageCubit());
+        locator.registerFactory(() => MessageBloc());
+
+
 
   // usecase
   locator.registerLazySingleton(() => GetOrderSummary(locator()));

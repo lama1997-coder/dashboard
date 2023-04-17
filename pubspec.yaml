@@ -52,6 +52,11 @@ dependencies:
   generic_bloc_provider: ^2.1.1
   dropdown_button2: ^2.0.0
   syncfusion_flutter_charts: ^21.1.39
+  flutter_rating_bar: ^4.0.1
+  flutter_chat_ui: ^0.0.2
+  chat_bubbles: ^1.4.1
+  custom_switch: ^0.0.1
+  fl_chart: ^0.55.2
 
 dev_dependencies:
   flutter_test:
@@ -91,6 +96,26 @@ flutter:
     - assets/images/No.png
     - assets/images/coin.svg
     - assets/images/bag.svg
+    - assets/images/best1.png
+    - assets/images/best2.png
+    - assets/images/chart.png
+    - assets/images/profile2.png
+    - assets/images/google.png
+    - assets/images/inst.png
+    - assets/images/twitter.png
+    - assets/images/tiktok.png
+    - assets/images/chat.png
+    - assets/images/chat2.png
+    - assets/images/file.png
+    - assets/images/arrow_down.png
+    - assets/images/chat_image.png
+    - assets/images/record.png
+    - assets/images/play.png
+    - assets/images/rec_play.png
+    - assets/images/notif.png
+    - assets/images/chat_image2.png
+    - assets/images/chat_image3.png
+    - assets/images/perf.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
